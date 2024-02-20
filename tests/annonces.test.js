@@ -16,7 +16,7 @@ describe("POST /annonces", () => {
         ville: "Lyon",
         codePostal: "69000",
       },
-      caractéristiques: {
+      caracteristiques: {
         chambre: 2,
         salleDeBain: 1,
         balcon: true,

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des annonces</title>
+</head>
+<body>
+    <h1>Liste des annonces</h1>
+    <ul>
+        {{#annonces}}
+        <li>
+            <strong>{{titre}}</strong> - {{description}} - {{prix}} €
+        </li>
+        {{/annonces}}
+    </ul>
+</body>
+</html>
