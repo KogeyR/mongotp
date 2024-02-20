@@ -31,9 +31,6 @@ router.post("/annonces", async (req, res) => {
     }
 });
 
-router.get("/creerAnnonce", (req, res) => {
-    res.render("creerAnnonce");
-});
 
 router.get("/annonces", async (req, res) => {
     try {
