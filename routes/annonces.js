@@ -32,15 +32,15 @@ router.post("/annonces", async (req, res) => {
 });
 
 
-router.get("/annonces", async (req, res) => {
-    try {
-        const annonces = await Annonce.find({});
-        res.render("listeAnnonces", { annonces: annonces });
-    } catch (error) {
-        console.error(error);
+router.get("/annonces", (req, res) => {
+    Annonce.find({}, (err, annonces) => {
+      if (err) {
         res.status(500).json({ message: "Une erreur est survenue" });
-    }
-});
+      } else {
+        res.json(annonces);
+      }
+    });
+  });
 
 
  router.get("/annonces/:id", async (req, res) => {
