@@ -32,16 +32,15 @@ router.post("/annonces", async (req, res) => {
 });
 
 
-router.get("/annonces", (req, res) => {
-    Annonce.find({}, (err, annonces) => {
-      if (err) {
-        res.status(500).json({ message: "Une erreur est survenue" });
-      } else {
+router.get("/annonces", async (req, res) => {
+    try {
+        const annonces = await Annonce.find({});
         res.json(annonces);
-      }
-    });
-  });
-
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Une erreur est survenue lors de la récupération des annonces" });
+    }
+});
 
  router.get("/annonces/:id", async (req, res) => {
      try {
