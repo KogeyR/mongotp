@@ -32,6 +32,7 @@ router.post("/annonces", async (req, res) => {
 });
 
 
+
 router.get("/annonces", async (req, res) => {
     try {
         const annonces = await Annonce.find({});

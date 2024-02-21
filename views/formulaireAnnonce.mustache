@@ -1,0 +1,57 @@
+<!-- formulaireAnnonce.mustache -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer une annonce</title>
+</head>
+<body>
+    <h1>Créer une annonce</h1>
+    <form action="/annonces" method="POST">
+        <label for="titre">Titre:</label><br>
+        <input type="text" id="titre" name="titre" value="{{ titre }}" required><br>
+        
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required>{{ description }}</textarea><br>
+        
+        <label for="prix">Prix:</label><br>
+        <input type="number" id="prix" name="prix" value="{{ prix }}" required><br>
+        
+        <label for="balcon">Balcon:</label><br>
+        <select id="balcon" name="balcon">
+            <option value="true" {{# balcon }} selected {{/ balcon }}>Oui</option>
+            <option value="false" {{^ balcon }} selected {{/ balcon }}>Non</option>
+        </select><br>
+        
+        <label for="jardin">Jardin:</label><br>
+        <select id="jardin" name="jardin">
+            <option value="true" {{# jardin }} selected {{/ jardin }}>Oui</option>
+            <option value="false" {{^ jardin }} selected {{/ jardin }}>Non</option>
+        </select><br>
+        
+        <label for="ville">Ville:</label><br>
+        <input type="text" id="ville" name="ville" value="{{ ville }}" required><br>
+        
+        <label for="codePostal">Code Postal:</label><br>
+        <input type="text" id="codePostal" name="codePostal" value="{{ codePostal }}" required><br>
+        
+        <label for="surface">Surface:</label><br>
+        <input type="number" id="surface" name="surface" value="{{ surface }}" required><br>
+        
+        <label for="chambre">Nombre de Chambres:</label><br>
+        <input type="number" id="chambre" name="chambre" value="{{ chambre }}" required><br>
+        
+        <label for="salleDeBain">Nombre de Salles de Bain:</label><br>
+        <input type="number" id="salleDeBain" name="salleDeBain" value="{{ salleDeBain }}" required><br>
+        
+        <label for="parking">Parking:</label><br>
+        <select id="parking" name="parking">
+            <option value="true" {{# parking }} selected {{/ parking }}>Oui</option>
+            <option value="false" {{^ parking }} selected {{/ parking }}>Non</option>
+        </select><br><br>
+        
+        <button type="submit">Créer Annonce</button>
+    </form>
+</body>
+</html>
