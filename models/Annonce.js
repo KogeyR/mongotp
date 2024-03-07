@@ -34,16 +34,16 @@ localisation: {
         required: true},
 
     salleDeBain:{type: Number,
-        required: true},
+        required: false},
 
     balcon:{type: Boolean,
-        required: true},
+        required: false},
 
     jardin: {type: Boolean,
-    required: true},
+    required: false},
 
     parking: {type: Boolean,
-    required: true}
+    required: false}
 
   },
   
